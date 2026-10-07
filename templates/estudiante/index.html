@@ -1,4 +1,30 @@
-{% extends "layout.html" %}
-{% block contenido %} 
-<h1>lista de estudiante</h1>
-{% endblock %}
+<h2>Lista de Estudiantes</h2>
+<a href="{{ url_for('estudiante.create') }}">Agregar Nuevo Estudiante</a>
+
+<table border="1">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Email</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for est in estudiantes %}
+        <tr>
+            <td>{{ est.id }}</td>
+            <td>{{ est.nombre }}</td>
+            <td>{{ est.apellido }}</td>
+            <td>{{ est.email }}</td>
+            <td>
+                <a href="{{ url_for('estudiante.editar', id=est.id) }}">Editar</a>
+                <form action="{{ url_for('estudiante.eliminar', id=est.id) }}" method="POST" style="display:inline;">
+                    <button type="submit">Eliminar</button>
+                </form>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>

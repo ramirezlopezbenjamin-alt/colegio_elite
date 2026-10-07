@@ -1,0 +1,14 @@
+<h2>Agregar Estudiante</h2>
+<form action="{{ url_for('estudiante.create') }}" method="POST">
+    <label>Nombre:</label>
+    <input type="text" name="nombre" required><br>
+    
+    <label>Apellido:</label>
+    <input type="text" name="apellido" required><br>
+    
+    <label>Email:</label>
+    <input type="email" name="email" required><br>
+    
+    <button type="submit">Guardar</button>
+</form>
+<a href="{{ url_for('estudiante.index') }}">Volver</a>
