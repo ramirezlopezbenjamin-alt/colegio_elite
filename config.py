@@ -7,3 +7,4 @@ def get_db_connection():
         password="",          # Pon la contraseña de tu MySQL si tiene
         database="colegio_elite"
     )
+

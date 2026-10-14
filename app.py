@@ -1,5 +1,6 @@
 from flask import Flask, redirect, url_for
 from controllers.estudiante_controllers import estudiante_bp
+import mysql.connector
 
 app = Flask(__name__)
 
