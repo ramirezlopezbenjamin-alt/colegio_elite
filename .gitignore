@@ -6,3 +6,25 @@ venv/
 # Archivos de configuración locales y variables de entorno
 .env
 *.env
+
+# === Python (Binarios y Cache) ===
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.bin
+*.exe
+*.dll
+*.so
+*.dylib
+
+# === Visual Studio Code ===
+.vscode/
+!.vscode/extensions.json
+
+# === Visual Studio (Completo) ===
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
