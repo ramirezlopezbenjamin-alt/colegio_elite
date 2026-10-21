@@ -5,7 +5,7 @@ class EstudianteModel:
     @staticmethod
     def obtener_todos():
         conexion = get_db_connection()
-        cursor = conexion.cursor(named_tuple=True)
+        cursor = conexion.cursor(dictionary=True)
         cursor.execute("SELECT * FROM estudiantes")
         estudiantes = cursor.fetchall()
         conexion.close()
