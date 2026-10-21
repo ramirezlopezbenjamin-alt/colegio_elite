@@ -11,6 +11,7 @@
             <th>ID</th>
             <th>Nombre</th>
             <th>Apellido</th>
+            <th>Fecha de Nacimiento</th>
 
             <th>Acciones</th>
         </tr>
@@ -18,9 +19,9 @@
     <tbody>
         {% for est in estudiantes %}
         <tr>
-            <td>{{ est.id_estudiante }}</td>
-            <td>{{ est.nombre}}</td>
-            <td>{{ est.fecha_nacimiento }}</td>
+            <td>{{ est['id'] }}</td>
+            <td>{{ est['nombre'] }}</td>
+            <td>{{ est['fecha_nacimiento'] }}</td>
  
             <td>
                 <a href="{{ url_for('estudiante.editar', id=est.id_estudiante) }}">Editar</a>
