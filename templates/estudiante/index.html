@@ -31,11 +31,12 @@
                         <td>{{ est['apellido'] }}</td>
                         <td><i class="bi bi-envelope me-1 text-muted"></i>{{ est['email'] }}</td>
                         <td class="text-center">
-                            <a href="{{ url_for('estudiante.editar', id=est.id) }}"
+                            <a href="{{ url_for('estudiante.editar', id=est['id']) }}"
                                 class="btn btn-sm btn-outline-warning me-1" title="Editar">
                                 <i class="bi bi-pencil-square"></i>
                             </a>
-                            <form action="{{ url_for('estudiante.eliminar', id=est.id) }}" method="POST"
+                            <form action="{{ url_for('estudiante.eliminar', id=est['id']) }}" method="POST"
+                                class="d-inline">
                                 class="d-inline">
                                 <button type="submit" class="btn btn-sm btn-outline-danger"
                                     onclick="return confirm('¿Seguro que deseas eliminar este estudiante?');"
