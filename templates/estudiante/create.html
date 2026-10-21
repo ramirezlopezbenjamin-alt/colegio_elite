@@ -1,18 +1,38 @@
-{% extends 'layout.html'%}
-{% block contenido %} 
-<h2>Agregar Estudiante</h2>
-<form action="{{ url_for('estudiante.create') }}" method="POST">
-    <label>Nombre:</label>
-    <input class="form-control" type="text" name="nombre" required><br>
-    
-    <label>Apellido:</label>
-    <input class="form-control" type="text" name="apellido" required><br>
-    
-    <label>Email:</label>
-    <input class="form-control" type="email" name="email" required><br>
-    
-    <button type="submit">Guardar</button>
-</form>
-<a href="{{ url_for('estudiante.index') }}">Volver</a>
+{% extends 'layout.html' %}
 
+{% block title %}Agregar Estudiante{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <div class="card shadow-sm">
+            <div class="card-header bg-success text-white">
+                <h4 class="mb-0">Agregar Nuevo Estudiante</h4>
+            </div>
+            <div class="card-body">
+                <form action="{{ url_for('estudiante.create') }}" method="POST">
+                    <div class="mb-3">
+                        <label class="form-label">Nombre:</label>
+                        <input type="text" name="nombre" class="form-control" placeholder="Ej. Carlos" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Apellido:</label>
+                        <input type="text" name="apellido" class="form-control" placeholder="Ej. Pérez" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Correo Electrónico:</label>
+                        <input type="email" name="email" class="form-control" placeholder="ejemplo@correo.com" required>
+                    </div>
+
+                    <div class="d-flex justify-content-between">
+                        <a href="{{ url_for('estudiante.index') }}" class="btn btn-secondary">Cancelar</a>
+                        <button type="submit" class="btn btn-success">Guardar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock %}
