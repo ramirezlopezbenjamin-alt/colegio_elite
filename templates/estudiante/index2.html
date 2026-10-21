@@ -17,10 +17,10 @@
     <tbody>
         {% for est in estudiantes %}
         <tr>
-            <td>{{ est['id'] }}</td>
-            <td>{{ est['nombre'] }}</td>
-            <td>{{ est['apellido'] }}</td>
-            <td>{{ est['email'] }}</td>
+            <td>{{ est.id }}</td>
+            <td>{{ est.nombre }}</td>
+            <td>{{ est.apellido }}</td>
+            <td>{{ est.email }}</td>
             <td>
                 <a href="{{ url_for('estudiante.editar', id=est.id) }}">Editar</a>
                 <form action="{{ url_for('estudiante.eliminar', id=est.id) }}" method="POST" style="display:inline;">
