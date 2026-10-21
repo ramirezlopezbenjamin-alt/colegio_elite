@@ -26,10 +26,10 @@
                 <tbody>
                     {% for est in estudiantes %}
                     <tr>
-                        <td class="ps-3"><span class="badge bg-secondary">#{{ est.id }}</span></td>
-                        <td class="fw-semibold">{{ est.nombre }}</td>
-                        <td>{{ est.apellido }}</td>
-                        <td><i class="bi bi-envelope me-1 text-muted"></i>{{ est.email }}</td>
+                        <td class="ps-3"><span class="badge bg-secondary">#{{ est['id'] }}</span></td>
+                        <td class="fw-semibold">{{ est['nombre'] }}</td>
+                        <td>{{ [est'apellido'] }}</td>
+                        <td><i class="bi bi-envelope me-1 text-muted"></i>{{ est['email'] }}</td>
                         <td class="text-center">
                             <a href="{{ url_for('estudiante.editar', id=est.id) }}" class="btn btn-sm btn-outline-warning me-1" title="Editar">
                                 <i class="bi bi-pencil-square"></i>
