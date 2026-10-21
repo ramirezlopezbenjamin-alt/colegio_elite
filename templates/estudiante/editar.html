@@ -1,0 +1,14 @@
+<h2>Editar Estudiante</h2>
+<form action="{{ url_for('estudiante.editar', id=estudiante.id) }}" method="POST">
+    <label>Nombre:</label>
+    <input type="text" name="nombre" value="{{ estudiante.nombre }}" required><br>
+    
+    <label>Apellido:</label>
+    <input type="text" name="apellido" value="{{ estudiante.apellido }}" required><br>
+    
+    <label>Email:</label>
+    <input type="email" name="email" value="{{ estudiante.email }}" required><br>
+    
+    <button type="submit">Actualizar</button>
+</form>
+<a href="{{ url_for('estudiante.index') }}">Cancelar</a>
