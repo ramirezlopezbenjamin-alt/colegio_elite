@@ -20,23 +20,28 @@
                         <th>Nombre</th>
                         <th>Apellido</th>
                         <th>Email</th>
+                        <th>Fecha Nac.</th>
+                        <th>Id curso</th>
                         <th class="text-center">Acciones</th>
                     </tr>
                 </thead>
                 <tbody>
                     {% for est in estudiantes %}
                     <tr>
-                        <td class="ps-3"><span class="badge bg-secondary">#{{ est['id'] }}</span></td>
+                        <td class="ps-3"><span class="badge bg-secondary">#{{ est['id_estudiante'] }}</span></td>
                         <td class="fw-semibold">{{ est['nombre'] }}</td>
-                        <td>{{ est['apellido'] }}</td>
+                        <td class="fw-semibold">{{ est['apellido'] }}</td>
                         <td><i class="bi bi-envelope me-1 text-muted"></i>{{ est['email'] }}</td>
+                        <td>{{ est['fecha_nacimiento'] }}</td>
+                        <td>{{ est['id_curso'] }}</td>
                         <td class="text-center">
-                            <a href="{{ url_for('estudiante.editar', id=est.id) }}"
+                            {{est['id_estudiante']}}
+                            <a href="{{ url_for('estudiante.editar', id=est['id_estudiante']) }}"
                                 class="btn btn-sm btn-outline-warning me-1" title="Editar">
                                 <i class="bi bi-pencil-square"></i>
                             </a>
-                            <form action="{{ url_for('estudiante.eliminar', id=est.id) }}" method="POST"
-                                class="d-inline">
+                            <form action="{{ url_for('estudiante.eliminar', id=est['id_estudiante']) }}" method="POST" class="d-inline">
+                                
                                 <button type="submit" class="btn btn-sm btn-outline-danger"
                                     onclick="return confirm('¿Seguro que deseas eliminar este estudiante?');"
                                     title="Eliminar">
