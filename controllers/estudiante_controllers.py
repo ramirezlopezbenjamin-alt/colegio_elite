@@ -14,7 +14,8 @@ def create():
         nombre = request.form['nombre']
         apellido = request.form['apellido']
         email = request.form['email']
-        EstudianteModel.crear(nombre, apellido, email)
+        fnac = request.form['fecha_nacimiento']
+        EstudianteModel.crear(nombre, apellido, email, fnac)
         flash('Estudiante registrado exitosamente.', 'success')
         return redirect(url_for('estudiante.index'))
     return render_template('estudiante/create.html')
@@ -25,11 +26,14 @@ def editar(id):
         nombre = request.form['nombre']
         apellido = request.form['apellido']
         email = request.form['email']
-        EstudianteModel.actualizar(id, nombre, apellido, email)
+        fnac = request.form['fecha_nacimiento']
+        EstudianteModel.actualizar(id, nombre, apellido, email, fnac)
         flash('Datos del estudiante actualizados.', 'warning')
         return redirect(url_for('estudiante.index'))
+
     
     estudiante = EstudianteModel.obtener_por_id(id)
+    print(f"{estudiante}")
     return render_template('estudiante/editar.html', estudiante=estudiante)
 
 @estudiante_bp.route('/eliminar/<int:id>', methods=['POST'])

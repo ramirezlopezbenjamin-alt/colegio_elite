@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 14-10-2026 a las 17:01:55
+-- Tiempo de generación: 23-10-2026 a las 16:07:16
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.0.30
 
@@ -91,6 +91,8 @@ INSERT INTO `curso_asignatura` (`id_curso`, `id_asignatura`) VALUES
 CREATE TABLE `estudiantes` (
   `id_estudiante` int(11) NOT NULL,
   `nombre` varchar(100) NOT NULL,
+  `apellido` varchar(50) NOT NULL,
+  `email` varchar(100) NOT NULL,
   `fecha_nacimiento` date DEFAULT NULL,
   `id_curso` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -99,9 +101,9 @@ CREATE TABLE `estudiantes` (
 -- Volcado de datos para la tabla `estudiantes`
 --
 
-INSERT INTO `estudiantes` (`id_estudiante`, `nombre`, `fecha_nacimiento`, `id_curso`) VALUES
-(1, 'Juan Gómez', '2007-05-14', 1),
-(2, 'María Silva', '2008-11-20', 2);
+INSERT INTO `estudiantes` (`id_estudiante`, `nombre`, `apellido`, `email`, `fecha_nacimiento`, `id_curso`) VALUES
+(1, 'Juan', 'Gómez', 'juan@cldva.cl', '2007-05-14', 1),
+(2, 'María', 'Silva', 'maria@cldv.cl', '2008-11-20', 2);
 
 -- --------------------------------------------------------
 
@@ -207,7 +209,7 @@ ALTER TABLE `cursos`
 -- AUTO_INCREMENT de la tabla `estudiantes`
 --
 ALTER TABLE `estudiantes`
-  MODIFY `id_estudiante` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_estudiante` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de la tabla `profesores`
